@@ -9,6 +9,19 @@ const commitHash = require('child_process')
   .toString()
   .trim()
 
+
+let tag = "master"
+
+try {
+  tag = require('child_process')
+  .execSync('git describe --tags')
+  .toString()
+  .trim()
+} catch (err){
+  // swallow the exception
+}
+
+
 module.exports = {
   plugins: [
     new CleanWebpackPlugin({
@@ -20,6 +33,7 @@ module.exports = {
       outputFile: path.join(__dirname, 'dist', 'version.json'),
       meta: {
         githash: commitHash,
+        gittag: tag,
         buildDate: Date.now(),
       },
     }),
