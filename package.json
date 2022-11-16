@@ -49,6 +49,7 @@
   },
   "homepage": "/alma.deploy.poc/",
   "devDependencies": {
+    "eslint-config-react-app": "^7.0.1",
     "webpack-cli": "^4.10.0"
   }
 }
