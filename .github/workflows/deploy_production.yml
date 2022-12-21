@@ -9,7 +9,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.18.x]
+        node-version: [16.18.x]
 
     steps:
     - id: latest
